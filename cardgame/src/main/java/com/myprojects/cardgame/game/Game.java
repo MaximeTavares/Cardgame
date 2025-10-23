@@ -7,7 +7,7 @@ import com.myprojects.cardgame.view.View;
 public class Game {
     public static void main(String[] args) {
 
-        GameController controller = new GameController(new Deck(), new View());
+        GameController controller = new GameController(new Deck(), new View(), new HighCardGameEvaluator());
         controller.run();
         
         

@@ -25,12 +25,12 @@ public class GameController {
 
     GameState gameState;
 
-    public GameController(Deck deck, View view) {
+    public GameController(Deck deck, View view, GameEvaluator evaluator) {
         this.deck = deck;
         this.view = view;
         this.players = new ArrayList<Player>();
         this.gameState = GameState.ADDING_PLAYERS;
-        this.evaluator = new GameEvaluator();
+        this.evaluator = evaluator;
         view.setController(this);
     }
 
