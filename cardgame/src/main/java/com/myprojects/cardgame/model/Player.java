@@ -22,4 +22,8 @@ public class Player {
         return hand.getCard(index);
     }
 
+    public String getName() {
+        return name;
+    }
+
 }
