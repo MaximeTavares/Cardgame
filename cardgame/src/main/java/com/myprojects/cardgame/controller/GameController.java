@@ -7,7 +7,7 @@ import com.myprojects.cardgame.game.GameEvaluator;
 import com.myprojects.cardgame.model.Deck;
 import com.myprojects.cardgame.model.Player;
 import com.myprojects.cardgame.model.PlayingCard;
-import com.myprojects.cardgame.view.View;
+import com.myprojects.cardgame.view.GameViewable;
 
 public class GameController {
 
@@ -20,12 +20,12 @@ public class GameController {
     Deck deck;
     List<Player> players;
     Player winner;
-    View view;
+    GameViewable view;
     GameEvaluator evaluator;
 
     GameState gameState;
 
-    public GameController(Deck deck, View view, GameEvaluator evaluator) {
+    public GameController(Deck deck, GameViewable view, GameEvaluator evaluator) {
         this.deck = deck;
         this.view = view;
         this.players = new ArrayList<Player>();
@@ -67,6 +67,11 @@ public class GameController {
         this.run();
     }
 
+    public void exitGame() {
+        System.out.println("Thanks for playing!");
+        System.exit(0);
+    }
+
     public void flipCards() {
         int playerIndex = 1;
         for (Player player : players) {
@@ -95,4 +100,6 @@ public class GameController {
             deck.returnCardToDeck(player.removeCardFromHand());
         }
     }
+
+    
 }

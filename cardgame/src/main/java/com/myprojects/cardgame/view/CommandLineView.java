@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.myprojects.cardgame.controller.GameController;
 
-public class View {
+public class CommandLineView implements GameViewable {
 
 	GameController controller;
 	Scanner keyboard = new Scanner(System.in);
@@ -35,12 +35,11 @@ public class View {
 		if (response.equalsIgnoreCase("y")) {
 			controller.startGame();
 		} else {
-			System.out.println("Thanks for playing!");
-			System.exit(0);
+			controller.exitGame();
 		}
 	}
 
-	public void showWinner(Object name) {
+	public void showWinner(String name) {
 		System.out.println("The winner is: " + name + "!");
 	}
 
